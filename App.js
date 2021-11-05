@@ -102,7 +102,7 @@ export default function App() {
 
           }}
         >
-          {() => <Gallery />}
+          {() => <Gallery photos={photos} />}
         </Tab.Screen>
 
 
