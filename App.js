@@ -12,14 +12,6 @@ const Tab = createBottomTabNavigator();
 export default function App() {
 
   const [photos, setPhotos] = useState([]);
-  const [capturedImage, setCapturedImage] = useState(null);
-
-  useEffect(() => {
-    setPhotos((currentPhotos) => {
-      return [capturedImage, ...currentPhotos];
-    });
-    console.log('nuevaFoto')
-  }, [capturedImage])
 
   return (
     <NavigationContainer>
@@ -60,7 +52,6 @@ export default function App() {
 
           tabBarInactiveTintColor: "grey",
           tabBarLabelStyle: { fontWeight: 'bold', textShadowColor: 'white' },
-          headerShadowVisible: false,
           tabBarShowLabel: false,
         })}
       >
@@ -77,12 +68,11 @@ export default function App() {
               color: 'white',
             },
             tabBarActiveTintColor: colores.light,
-            tabBarStyle: { backgroundColor: 'black', borderTopWidth: 0 },
-
+            tabBarStyle: { backgroundColor: 'black' },
           }}
         >
           {() => <CameraPage
-            setCapturedImage={setCapturedImage}
+            setPhotos={setPhotos}
           />}
         </Tab.Screen>
 
@@ -98,7 +88,7 @@ export default function App() {
               color: 'white'
             },
             tabBarActiveTintColor: colores.light,
-            tabBarStyle: { backgroundColor: 'black', borderTopWidth: 0 },
+            tabBarStyle: { backgroundColor: 'black' },
 
           }}
         >
@@ -116,9 +106,9 @@ export default function App() {
             color: 'white'
           },
           tabBarActiveTintColor: colores.light,
-          tabBarStyle: { backgroundColor: 'black', borderTopWidth: 0 },
+          tabBarStyle: { backgroundColor: 'black' },
         }}>
-          {() => <Profile />}
+          {() => <Profile setPhotos={setPhotos} />}
         </Tab.Screen>
 
       </Tab.Navigator>
