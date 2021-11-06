@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import { useIsFocused } from "@react-navigation/native";
 import { Camera } from "expo-camera";
-import { Container, ButtonsContainer, Button } from "./Cameracomponents";
+import { Container, ButtonsContainer, Button } from "./CameraComponents";
 import { Ionicons } from "@expo/vector-icons";
 
 const CameraPage = ({ setPhotos }) => {

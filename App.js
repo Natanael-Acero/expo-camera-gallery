@@ -4,8 +4,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { colores } from './styles/colores.styles';
 import CameraPage from './pages/Camera/CameraPage';
-import Gallery from './pages/Gallery/Gallery';
-import Profile from './pages/Profile/Profile';
+import GalleryPage from './pages/Gallery/GalleryPage';
+import ProfilePage from './pages/Profile/ProfilePage';
 
 const Tab = createBottomTabNavigator();
 
@@ -92,7 +92,7 @@ export default function App() {
 
           }}
         >
-          {() => <Gallery photos={photos} />}
+          {() => <GalleryPage photos={photos} />}
         </Tab.Screen>
 
 
@@ -108,7 +108,7 @@ export default function App() {
           tabBarActiveTintColor: colores.light,
           tabBarStyle: { backgroundColor: 'black' },
         }}>
-          {() => <Profile setPhotos={setPhotos} />}
+          {() => <ProfilePage setPhotos={setPhotos} />}
         </Tab.Screen>
 
       </Tab.Navigator>
