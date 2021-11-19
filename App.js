@@ -49,7 +49,6 @@ export default function App() {
           tabBarStyle: {
             backgroundColor: 'black',
           },
-
           tabBarInactiveTintColor: "grey",
           tabBarLabelStyle: { fontWeight: 'bold', textShadowColor: 'white' },
           tabBarShowLabel: false,
